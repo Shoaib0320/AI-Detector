@@ -156,10 +156,6 @@ export async function humanizeText(text: string, language: string): Promise<stri
     return demo;
   }
 
-
-
-
-  
   try {
   // Use the correct model name for Gemini API (update as per ListModels response)
   const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
