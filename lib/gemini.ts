@@ -168,6 +168,13 @@ export async function humanizeText(text: string, language: string): Promise<stri
       ${text}
       """
 
+
+
+
+
+
+      
+
       Return ONLY the rewritten text, with no explanations, no quotes, and no extra formatting.
     `;
 
@@ -180,12 +187,7 @@ export async function humanizeText(text: string, language: string): Promise<stri
     return response.text().replace(/^"|"$/g, '').trim();
   } catch (error: any) {
     console.error('Gemini API error for humanization:', error);
-    
 
-
-
-
-    
     // Better fallback: apply basic humanization instead of returning original text
     console.log('Applying fallback humanization...');
     let fallback = text
