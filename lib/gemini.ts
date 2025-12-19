@@ -175,14 +175,11 @@ export async function humanizeText(text: string, language: string): Promise<stri
     const result = await retryWithBackoff(async () => {
       return await model.generateContent(prompt);
     });
-    
+
     const response = await result.response;
     return response.text().replace(/^"|"$/g, '').trim();
   } catch (error: any) {
     console.error('Gemini API error for humanization:', error);
-
-
-    
 
     // Better fallback: apply basic humanization instead of returning original text
     console.log('Applying fallback humanization...');
