@@ -210,11 +210,3 @@ export async function humanizeText(text: string, language: string): Promise<stri
     return fallback;
   }
 }
-
-
-
-
-
-
-
-
